@@ -337,4 +337,18 @@ Sorularınız için issue açabilirsiniz.
 
 ---
 
-**Powered by OpenAI CLIP & Faiss** 🚀
+<div align="center">
+
+### 🚀 Powered by
+
+**OpenAI CLIP** • **Facebook Faiss** • **Hugging Face Transformers**
+
+Geliştirici: **Talha Kenan** | 2025
+
+[![GitHub](https://img.shields.io/badge/GitHub-talhakenan1-181717?style=flat&logo=github)](https://github.com/talhakenan1)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
+
+⭐ Bu projeyi beğendiyseniz yıldız vermeyi unutmayın!
+
+</div>
