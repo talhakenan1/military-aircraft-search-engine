@@ -312,20 +312,6 @@ EMBEDDING_DIM = 512
 FLASK_PORT = 5001
 ```
 
-## 📊 Sistem Gereksinimleri
-
-### Minimum
-- CPU: 4 çekirdek
-- RAM: 8 GB
-- Disk: 5 GB boş alan
-- Python: 3.8+
-
-### Önerilen
-- GPU: NVIDIA GPU (6GB+ VRAM)
-- RAM: 16 GB
-- Disk: 20 GB boş alan (SSD önerilir)
-- Python: 3.9+
-
 ## 🤝 Katkıda Bulunma
 
 1. Fork yapın
