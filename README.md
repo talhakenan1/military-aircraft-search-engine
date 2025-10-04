@@ -345,7 +345,7 @@ Sorularınız, önerileriniz veya geri bildirimleriniz için:
 
 **OpenAI CLIP** • **Facebook Faiss** • **Hugging Face Transformers**
 
-Geliştirici: **Talha Kenan** | 2025
+Geliştirici: **Talha Kenan Yaylacık** | 2025
 
 [![GitHub](https://img.shields.io/badge/GitHub-talhakenan1-181717?style=flat&logo=github)](https://github.com/talhakenan1)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
