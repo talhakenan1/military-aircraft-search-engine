@@ -1,6 +1,8 @@
-# ✈️ Airplane Search Engine
+# ✈️ Military Aircraft Search Engine
 
-Doğal dil tabanlı uçak fotoğrafı arama motoru. OpenAI'nin CLIP modeli ve Faiss vektör veritabanı kullanılarak geliştirilmiştir.
+Doğal dil tabanlı askeri uçak fotoğrafı arama motoru. OpenAI'nin CLIP modeli ve Faiss vektör veritabanı kullanılarak geliştirilmiştir.
+
+> 🎉 **Hazır Kullanım**: Bu repository, önceden oluşturulmuş embedding dosyalarını (~131 MB) içermektedir. Sadece veri setini indirip hemen kullanmaya başlayabilirsiniz!
 
 ## 🎯 Proje Özeti
 
@@ -65,10 +67,11 @@ airplaneSearchEngine/
 
 ## 🚀 Kurulum
 
-### 1. Depoyu Klonlayın veya İndirin
+### 1. Depoyu Klonlayın
 
 ```bash
-cd airplaneSearchEngine
+git clone https://github.com/talhakenan1/military-aircraft-search-engine.git
+cd military-aircraft-search-engine
 ```
 
 ### 2. Sanal Ortam Oluşturun (Önerilen)
@@ -91,23 +94,68 @@ pip install -r requirements.txt
 
 **Not**: PyTorch kurulumu için GPU desteği istiyorsanız, [PyTorch resmi sitesinden](https://pytorch.org/get-started/locally/) sisteminize uygun komutu kullanın.
 
-### 4. Uçak Fotoğraflarını Ekleyin
+### 4. Veri Setini İndirin
 
-Fotoğraflarınızı `data/airplane_photos/` klasörüne kopyalayın:
+#### 📦 Veri Seti Hakkında
+
+Bu proje, **Kaggle** üzerinde bulunan açık kaynaklı military aircraft veri setini kullanmaktadır:
+
+**Veri Seti Kaynağı**: [Military Aircraft Recognition Dataset](https://www.kaggle.com/datasets) (Kaggle)
+- **Boyut**: ~5.4 GB
+- **Görsel Sayısı**: 40,000+ fotoğraf
+- **Format**: JPG, PNG
+- **İçerik**: Çeşitli askeri uçakların farklı açılardan çekilmiş fotoğrafları
+
+#### İndirme Adımları:
+
+**Seçenek 1: Kaggle CLI (Önerilen)**
+
+1. Kaggle hesabı oluşturun (ücretsiz): [kaggle.com](https://www.kaggle.com)
+2. Kaggle API token'ınızı indirin: [kaggle.com/settings](https://www.kaggle.com/account) → "Create New API Token"
+3. `kaggle.json` dosyasını uygun konuma yerleştirin:
+   - **Windows**: `C:\Users\<username>\.kaggle\kaggle.json`
+   - **Linux/Mac**: `~/.kaggle/kaggle.json`
+4. Veri setini indirin:
+
+```bash
+# Kaggle CLI'ı kurun
+pip install kaggle
+
+# Veri setini indirin (dataset adını güncelleyin)
+kaggle datasets download -d <dataset-username>/<dataset-name>
+
+# Zip dosyasını açın
+unzip <dataset-name>.zip -d data/airplane_photos/
+```
+
+**Seçenek 2: Manuel İndirme**
+
+1. Kaggle veri seti sayfasına gidin
+2. "Download" butonuna tıklayın
+3. İndirilen zip dosyasını `data/airplane_photos/` klasörüne çıkarın
+
+**Seçenek 3: Kendi Veri Setiniz**
+
+Kendi uçak fotoğraflarınızı kullanabilirsiniz:
 
 ```bash
 data/airplane_photos/
-├── image1.jpg
-├── image2.png
-├── subfolder/
-│   ├── image3.jpg
-│   └── ...
+├── F-35/
+│   ├── image1.jpg
+│   └── image2.png
+├── Su-57/
+│   └── image3.jpg
 └── ...
 ```
 
 **Desteklenen formatlar**: `.jpg`, `.jpeg`, `.png`, `.bmp`, `.gif`, `.tiff`
 
-### 5. Embedding'leri Oluşturun
+### 5. Embedding'leri Oluşturun (Opsiyonel)
+
+> **⚠️ ÖNEMLİ**: Bu repository, **önceden oluşturulmuş embedding dosyalarını** içermektedir (`data/embeddings/`).
+> Eğer aynı veri setini kullanıyorsanız, bu adımı atlayabilirsiniz ve direkt 6. adıma geçebilirsiniz.
+
+Kendi veri setinizi kullanıyorsanız veya embedding'leri yeniden oluşturmak istiyorsanız:
 
 ```bash
 python scripts/create_embeddings.py
@@ -116,9 +164,11 @@ python scripts/create_embeddings.py
 Bu işlem:
 - Tüm fotoğrafları tarar
 - Her fotoğraf için CLIP ile embedding oluşturur
-- Faiss index'i ve metadata'yı kaydeder
+- Faiss index'i ve metadata'yı `data/embeddings/` klasörüne kaydeder
 
-**Süre**: Fotoğraf sayısına ve donanıma bağlı olarak değişir (GPU ile çok daha hızlıdır)
+**Süre**: 
+- ~40,000 görsel için: 2-3 saat (GPU ile) veya 8-12 saat (CPU ile)
+- Fotoğraf sayısına ve donanıma bağlı olarak değişir
 
 ### 6. Web Uygulamasını Başlatın
 

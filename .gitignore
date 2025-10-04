@@ -39,8 +39,9 @@ env/
 # Data Files
 data/airplane_photos/*
 !data/airplane_photos/.gitkeep
-data/embeddings/*
-!data/embeddings/.gitkeep
+
+# Embeddings - LFS tracked files are included
+# data/embeddings/* files will be tracked via Git LFS
 
 # Models (downloaded from HuggingFace)
 models/transformers_cache/
