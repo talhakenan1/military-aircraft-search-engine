@@ -1,0 +1,28 @@
+# Web Framework
+Flask==3.0.0
+Flask-CORS==4.0.0
+
+# Deep Learning & AI
+torch==2.2.0
+torchvision==0.17.0
+transformers==4.36.0
+
+# Image Processing
+Pillow==10.1.0
+opencv-python==4.8.1.78
+
+# Vector Database (Faiss for local/small scale)
+faiss-cpu==1.8.0
+
+# Data Processing
+numpy==1.26.0
+pandas==2.1.3
+
+# Progress Bar
+tqdm==4.66.1
+
+# Utilities
+python-dotenv==1.0.0
+
+# Production Server
+gunicorn==21.2.0

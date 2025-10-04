@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviation Parts Finder - Uçak Parçası Arama Motoru</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body id="top">
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#top" class="logo">
+                <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo" class="logo-image">
+                <span>Uçak Arama Motoru</span>
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero Section -->
+        <header class="hero">
+            <h1 class="hero-title">Uçak Parçalarınızı Bulun</h1>
+            <p class="hero-subtitle">Motor bileşenlerinden aviyoniklere kadar ihtiyacınız olan parçalar<br>için kapsamlı envanterimizde arama yapın.</p>
+        </header>
+
+        <!-- Search Bar -->
+        <div class="search-section">
+            <div class="search-box">
+                <svg class="search-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 17C13.4183 17 17 13.4183 17 9C17 4.58172 13.4183 1 9 1C4.58172 1 1 4.58172 1 9C1 13.4183 4.58172 17 9 17Z" stroke="currentColor" stroke-width="2"/>
+                    <path d="M19 19L14.65 14.65" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    class="search-input" 
+                    placeholder="Boeing 737 landing gear"
+                    autocomplete="off"
+                >
+            </div>
+            
+            <!-- Results Count -->
+            <div class="results-count" id="resultsCount" style="display: none;">
+                <span id="resultsCountText">Yaklaşık 12 sonuç bulundu</span>
+            </div>
+        </div>
+
+        <!-- Results Section Header -->
+        <div id="resultsHeader" class="results-header" style="display: none;">
+            <h2>Arama Sonuçları</h2>
+        </div>
+
+        <!-- Popular Searches (shown before search) -->
+        <div id="popularSection" class="popular-section">
+            <h2 class="section-title">Popüler Aramalar</h2>
+            <div class="popular-tags">
+                <button class="popular-tag" data-query="Türbin Kanatları">Türbin Kanatları</button>
+                <button class="popular-tag" data-query="Navigasyon Sistemleri">Navigasyon Sistemleri</button>
+                <button class="popular-tag" data-query="Gövde Panelleri">Gövde Panelleri</button>
+                <button class="popular-tag" data-query="Koltuk Minderleri">Koltuk Minderleri</button>
+                <button class="popular-tag" data-query="Fren Tertibatları">Fren Tertibatları</button>
+                <button class="popular-tag" data-query="Aktüatörler">Aktüatörler</button>
+            </div>
+        </div>
+
+        <!-- Loading Indicator -->
+        <div id="loadingIndicator" class="loading-container" style="display: none;">
+            <div class="loading-spinner"></div>
+            <p class="loading-text">Aranıyor...</p>
+        </div>
+
+        <!-- Results Info -->
+        <div id="resultsInfo" class="results-info" style="display: none;">
+            <p id="resultsText"></p>
+        </div>
+
+        <!-- Error Message -->
+        <div id="errorMessage" class="error-message" style="display: none;"></div>
+
+        <!-- Results Grid -->
+        <div id="resultsContainer" class="results-grid">
+            <!-- Results will be dynamically inserted here -->
+        </div>
+        
+        <!-- Number of results selector (hidden by default) -->
+        <div id="resultsSelectorContainer" style="display: none;">
+            <label for="topKSelect" class="results-selector-label">Sonuç sayısı:</label>
+            <select id="topKSelect" class="results-selector">
+                <option value="10">10</option>
+                <option value="20" selected>20</option>
+                <option value="50">50</option>
+                <option value="100">100</option>
+            </select>
+        </div>
+
+        <!-- Modal for Full Image View -->
+        <div id="imageModal" class="modal">
+            <span class="modal-close">&times;</span>
+            <img class="modal-content" id="modalImage">
+            <div class="modal-caption" id="modalCaption"></div>
+        </div>
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>Powered by AI-driven Image Search • OpenAI CLIP & Faiss</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>
