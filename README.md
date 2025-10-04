@@ -333,7 +333,9 @@ Bu proje eğitim amaçlı geliştirilmiştir.
 
 ## 📧 İletişim
 
-Sorularınız için issue açabilirsiniz.
+Sorularınız, önerileriniz veya geri bildirimleriniz için:
+- **GitHub Issues**: [Issue açın](https://github.com/talhakenan1/military-aircraft-search-engine/issues)
+- **Pull Requests**: Katkılarınız çok önemli!
 
 ---
 
