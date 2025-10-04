@@ -2,7 +2,7 @@
 
 Doğal dil tabanlı askeri uçak fotoğrafı arama motoru. OpenAI'nin CLIP modeli ve Faiss vektör veritabanı kullanılarak geliştirilmiştir.
 
-> 🎉 **Hazır Kullanım**: Bu repository, önceden oluşturulmuş embedding dosyalarını (~131 MB) içermektedir. Sadece veri setini indirip hemen kullanmaya başlayabilirsiniz!
+> 🎉 **Hazır Kullanım**: Bu repository, önceden oluşturulmuş embedding dosyalarını (~131 MB) içermektedir. Sadece veri setini indirip hemen kullanmaya başlayabilirsiniz.
 
 ## 🎯 Proje Özeti
 
